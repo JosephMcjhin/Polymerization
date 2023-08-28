@@ -7,8 +7,11 @@ Rich and unpredictable synthesis routes, natural and beautiful UI interface, smo
 
 ## Implemented game functions: 
 hexagonal chessboard graphics design based on shaderlab, 
+
 UI update and event triggering based on c# delegation, 
+
 chess synthesis system based on binary subset enumeration and dictionary, 
+
 enemy ai based on evaluation function and A* algorithm
 
 ## Demo video address:
