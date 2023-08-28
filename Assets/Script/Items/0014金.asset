@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 861561cc0c46ba44b93b56cdbf454ec1, type: 3}
+  m_Name: "0014\u91D1"
+  m_EditorClassIdentifier: 
+  ItemID: 0014
+  ItemImage: {fileID: 21300000, guid: 0e302af0470d62c45a37668b7ae89b3c, type: 3}
+  ItemInfo: 123
+  cell_m: {fileID: 2100000, guid: 1751808d2ff170d43b1f9b12652fd450, type: 2}
+  outline_m: {fileID: 2100000, guid: 731d07cc52884e84384d24bb74e944ce, type: 2}
+  belong: 0
+  value: 100
+  hp: 1
+  atk: 0
