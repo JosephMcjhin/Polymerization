@@ -90,9 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e176cef3b797849992d2861002e7f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  img: {fileID: 4983310462510863459}
-  co: {r: 0, g: 0, b: 0, a: 0}
-  text: {fileID: 2806665968597865349}
+  Img: {fileID: 4983310462510863459}
   item: {fileID: 0}
 --- !u!1 &6047327634103128150
 GameObject:
@@ -111,7 +109,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8090208547399607136
 RectTransform:
   m_ObjectHideFlags: 0

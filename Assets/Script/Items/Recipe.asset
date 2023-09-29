@@ -12,11 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5583d027764062439e9a1e549278fb4, type: 3}
   m_Name: Recipe
   m_EditorClassIdentifier: 
-  recipe:
+  RecipeList:
   - 000100010002
-  - 000200080003
-  - 000300100004
-  - 0010001200120005
-  - 0010001300130006
-  - 0010001400140007
-  - 000900090011
+  - 000300030004

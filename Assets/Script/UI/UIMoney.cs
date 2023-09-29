@@ -7,12 +7,14 @@ public class UIMoney : MonoBehaviour
 {
     // Start is called before the first frame update
     public TextMeshProUGUI tt;
-    void Start(){
-        CraftManager.instance.money_action += UpdateUI;
-        CraftManager.instance.money = 50;
+    void Awake()
+    {
+        BasicData.Instance.OnMoneyChanged += UpdateUI;
+        BasicData.Instance.Money = 50;
     }
 
-    void UpdateUI(){
-        tt.text = "X" + CraftManager.instance.money.ToString();
+    void UpdateUI()
+    {
+        tt.text = "X" + BasicData.Instance.Money.ToString();
     }
 }

@@ -4,28 +4,31 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
-
-public class UIItem : MonoBehaviour,IPointerClickHandler
+//棋子图鉴更新
+public class UIItem : MonoBehaviour
 {
-    public Image img;
+    public Image Img;
 
-    public TextMeshProUGUI text;
+    //public TextMeshProUGUI Text;
 
     public Item item;
 
-    void Start(){
-        text.enabled = false;
-        img.color = new Color(0,0,0,1);
-        CraftManager.instance.ui_action += UpdateUI;
+    void Awake()
+    {
+        Img.color = new Color(0,0,0,1);
+        BasicData.Instance.OnItemCreated += UpdateUI;
     }
 
-    public void OnPointerClick(PointerEventData pointerEventData){
-        text.enabled = !text.enabled;
-    }
+    // public void OnPointerClick(PointerEventData pointerEventData){
+    //     Text.enabled = !Text.enabled;
+    // }
 
-    void UpdateUI(Item x){
-        if(x.ItemID == item.ItemID){
-            img.color = new Color(1,1,1,1);
+    void UpdateUI(Item x)
+    {
+        if(x.ItemID == item.ItemID)
+        {
+            Img.color = new Color(1,1,1,1);
+            BasicData.Instance.OnItemCreated -= UpdateUI;
         }
     }
 }

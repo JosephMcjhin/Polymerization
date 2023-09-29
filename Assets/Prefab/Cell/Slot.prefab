@@ -96,6 +96,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd0204d92efb7d147aefec1f090c3187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index_x: 0
-  index_y: 0
-  cell: {fileID: 1660928717949457349, guid: 54de6314f551fb44cab6734bb24922cf, type: 3}
+  Index: {x: 0, y: 0}
+  HexcellPrefab: {fileID: 1660928717949457349, guid: 54de6314f551fb44cab6734bb24922cf, type: 3}

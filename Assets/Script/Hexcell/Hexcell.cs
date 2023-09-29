@@ -4,25 +4,42 @@ using UnityEngine;
 using System;
 using UnityEngine.EventSystems;
 using UnityEditor;
+using TMPro;
 
 public class Hexcell : MonoBehaviour
 {
-    public int index_x; 
-    public int index_y; //格子位置序号
-    public Item cell_item;  //格子中的物品
-    public MeshRenderer cell_m;
-    public MeshRenderer outline_m;
-    public MeshRenderer highlight_m;
-    public SpriteRenderer cell_img;
+    public Vector2Int Index;  //格子所在的位置
+    public Item CellItem; //格子中的当前物品
 
-    //public Action enemy_init;
-    // private void Awake() {
-    //     var temp_or_member_var = GetComponent<MeshRenderer>().material;
-    // }
-    public void Update_cell(){
-        cell_m.material = cell_item.cell_m;
-        outline_m.material = cell_item.outline_m;
-        cell_img.sprite = cell_item.ItemImage;
-        transform.GetComponent<Enemy>().Init();
+    public MeshRenderer CellMat;
+    public MeshRenderer OutlineMat;
+    public MeshRenderer HighlightMat;
+    public SpriteRenderer CellImg;
+    public GameObject HpBar;
+    public TextMeshProUGUI HpText;
+
+    public GameObject AttackObj;
+
+    public EnemyUnit EScript;
+    public AllyUnit AScript;
+    DefaultUnit dScript;
+    
+    public void UpdateCell(Item newItem)
+    {
+        BasicData.Instance.OnItemCreated(newItem);
+        CellItem = newItem;
+        CellMat.material = CellItem.ItemCellMat;
+        OutlineMat.material = CellItem.ItemOutlineMat;
+        CellImg.sprite = CellItem.ItemImage;
+        if (EScript != null) { Destroy(EScript); EScript = null; }
+        if (AScript != null) { Destroy(AScript); AScript = null; }
+        if (dScript != null) { Destroy(dScript); dScript = null; }
+        if (CellItem.ItemBelong == 1) AScript = gameObject.AddComponent<AllyUnit>();
+        else if (CellItem.ItemBelong == 2) EScript = gameObject.AddComponent<EnemyUnit>();
+        else dScript = gameObject.AddComponent<DefaultUnit>();
+    }
+    public void ResetCell()
+    {
+        UpdateCell(BasicData.Instance.ItemList[0]);
     }
 }

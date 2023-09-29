@@ -9,10 +9,16 @@ public class Item : ScriptableObject
     public Sprite ItemImage;
     [TextArea]
     public string ItemInfo;
-    public Material cell_m;
-    public Material outline_m;
-    public int belong;
-    public int value;
-    public int hp;
-    public int atk;
+    public Material ItemCellMat;
+    public Material ItemOutlineMat;
+    public int ItemBelong;
+    public int ItemValue;
+    public int ItemHp;
+    public int ItemAtk;
+    public int ItemStepSize;
+    public int ItemStepGap;
+    public bool IsEmpty()
+    {
+        return ItemID == "0000";
+    }
 }

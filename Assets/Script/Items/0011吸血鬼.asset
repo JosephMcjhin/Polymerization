@@ -15,9 +15,11 @@ MonoBehaviour:
   ItemID: 0010
   ItemImage: {fileID: 21300000, guid: cb87b1d5360bfed4a9045fe4fb8b220c, type: 3}
   ItemInfo: 123
-  cell_m: {fileID: 2100000, guid: 0a679f88e57a45e489109e184ac6fc91, type: 2}
-  outline_m: {fileID: 2100000, guid: b03d555486312e94180cd3d6023b3872, type: 2}
-  belong: 1
-  value: 500
-  hp: 200
-  atk: 10
+  ItemCellMat: {fileID: 2100000, guid: 1751808d2ff170d43b1f9b12652fd450, type: 2}
+  ItemOutlineMat: {fileID: 2100000, guid: b03d555486312e94180cd3d6023b3872, type: 2}
+  ItemBelong: 2
+  ItemValue: 10
+  ItemHp: 10
+  ItemAtk: 10
+  ItemStepSize: 1
+  ItemStepGap: 1

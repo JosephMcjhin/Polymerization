@@ -3,36 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-
+//合成公式图鉴
 public class UIRecipeMask : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
 {
-    public GameObject recipe_item;
-    bool in_ui;
+    public GameObject recipeItem;
+    bool mouseOnUI;
 
-    void Start(){
-        CraftManager.instance.recipe_action += GenRecipe;
+    void Awake()
+    {
+        BasicData.Instance.OnRecipeChanged += GenRecipe;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        in_ui = true;
+        mouseOnUI = true;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        in_ui = false;
+        mouseOnUI = false;
     }
 
-    void GenRecipe(string s, Item res){
-        GameObject temp1 = Instantiate(recipe_item,transform.position,Quaternion.identity);
+    void GenRecipe(string s, Item res)
+    {
+        GameObject temp1 = Instantiate(recipeItem,transform.position,Quaternion.identity);
         temp1.transform.SetParent(transform);
         temp1.transform.localScale = new Vector3(1,1,1);
         temp1.GetComponent<UIRecipe>().GenRecipe(s, res);
     }
 
-    void Update(){
-        if(CameraManager.instance.Onmaincamera)return;
-        if (in_ui){
+    void Update()
+    {
+        if(CameraManager.Instance.OnMainCamera)return;
+        if (mouseOnUI)
+        {
             transform.GetComponent<GridLayoutGroup>().padding.top += (int)(Input.GetAxis("Mouse ScrollWheel") * 50);
             transform.GetComponent<GridLayoutGroup>().padding.top = Mathf.Clamp(transform.GetComponent<GridLayoutGroup>().padding.top, -500, 8);
             transform.GetComponent<GridLayoutGroup>().SetLayoutVertical();  //更新立即生效

@@ -9,17 +9,20 @@ public class UITips : MonoBehaviour
     [TextArea]
     public string[] tips;
     public Camera ca;
-    void Start(){
-        CraftManager.instance.tips_action += Display;
-        Display(0);
+    void Awake()
+    {
+        BasicData.Instance.OnTipsTriggered += Display;
     }
 
-    void Display(int now){
+    void Display(int now)
+    {
         ca.enabled = true;
         tt.text = tips[now];
     }
-    void Update(){
-        if(Input.GetMouseButtonDown(0)){
+    void Update()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
             ca.enabled = false;
         }
     }

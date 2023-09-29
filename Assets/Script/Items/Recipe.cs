@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Recipe", menuName = "New Recipe")]
 public class Recipe : ScriptableObject
 {
-    public List<string> recipe = new List<string>();
+    public List<string> RecipeList = new List<string>();
 }
